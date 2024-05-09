@@ -1,13 +1,21 @@
 {
   "files": {
-    "main.css": "/autocamper-rent/static/css/main.7acaea2f.css",
-    "main.js": "/autocamper-rent/static/js/main.07d3183d.js",
+    "main.css": "/autocamper-rent/static/css/main.d1395696.css",
+    "main.js": "/autocamper-rent/static/js/main.0e8c506a.js",
+    "static/js/352.5583ecbe.chunk.js": "/autocamper-rent/static/js/352.5583ecbe.chunk.js",
+    "static/js/80.d26ef4b2.chunk.js": "/autocamper-rent/static/js/80.d26ef4b2.chunk.js",
+    "static/js/697.87714b55.chunk.js": "/autocamper-rent/static/js/697.87714b55.chunk.js",
+    "static/media/autocamper.jpg": "/autocamper-rent/static/media/autocamper.ee02296a8893385934c0.jpg",
+    "static/media/icons.svg": "/autocamper-rent/static/media/icons.8893217544efe6be8e13994572390a89.svg",
     "index.html": "/autocamper-rent/index.html",
-    "main.7acaea2f.css.map": "/autocamper-rent/static/css/main.7acaea2f.css.map",
-    "main.07d3183d.js.map": "/autocamper-rent/static/js/main.07d3183d.js.map"
+    "main.d1395696.css.map": "/autocamper-rent/static/css/main.d1395696.css.map",
+    "main.0e8c506a.js.map": "/autocamper-rent/static/js/main.0e8c506a.js.map",
+    "352.5583ecbe.chunk.js.map": "/autocamper-rent/static/js/352.5583ecbe.chunk.js.map",
+    "80.d26ef4b2.chunk.js.map": "/autocamper-rent/static/js/80.d26ef4b2.chunk.js.map",
+    "697.87714b55.chunk.js.map": "/autocamper-rent/static/js/697.87714b55.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.7acaea2f.css",
-    "static/js/main.07d3183d.js"
+    "static/css/main.d1395696.css",
+    "static/js/main.0e8c506a.js"
   ]
 }
