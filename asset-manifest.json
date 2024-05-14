@@ -1,21 +1,25 @@
 {
   "files": {
     "main.css": "/autocamper-rent/static/css/main.d1395696.css",
-    "main.js": "/autocamper-rent/static/js/main.0e8c506a.js",
+    "main.js": "/autocamper-rent/static/js/main.2f553dc5.js",
     "static/js/352.5583ecbe.chunk.js": "/autocamper-rent/static/js/352.5583ecbe.chunk.js",
-    "static/js/80.d26ef4b2.chunk.js": "/autocamper-rent/static/js/80.d26ef4b2.chunk.js",
-    "static/js/697.87714b55.chunk.js": "/autocamper-rent/static/js/697.87714b55.chunk.js",
+    "static/js/481.978c10b1.chunk.js": "/autocamper-rent/static/js/481.978c10b1.chunk.js",
+    "static/js/413.1a33c2f3.chunk.js": "/autocamper-rent/static/js/413.1a33c2f3.chunk.js",
+    "static/js/639.37c76c8d.chunk.js": "/autocamper-rent/static/js/639.37c76c8d.chunk.js",
+    "static/js/672.060b2bd5.chunk.js": "/autocamper-rent/static/js/672.060b2bd5.chunk.js",
     "static/media/autocamper.jpg": "/autocamper-rent/static/media/autocamper.ee02296a8893385934c0.jpg",
-    "static/media/icons.svg": "/autocamper-rent/static/media/icons.8893217544efe6be8e13994572390a89.svg",
+    "static/media/icons.svg": "/autocamper-rent/static/media/icons.d374bed37ca7c2a0160c4150df6fbf06.svg",
     "index.html": "/autocamper-rent/index.html",
     "main.d1395696.css.map": "/autocamper-rent/static/css/main.d1395696.css.map",
-    "main.0e8c506a.js.map": "/autocamper-rent/static/js/main.0e8c506a.js.map",
+    "main.2f553dc5.js.map": "/autocamper-rent/static/js/main.2f553dc5.js.map",
     "352.5583ecbe.chunk.js.map": "/autocamper-rent/static/js/352.5583ecbe.chunk.js.map",
-    "80.d26ef4b2.chunk.js.map": "/autocamper-rent/static/js/80.d26ef4b2.chunk.js.map",
-    "697.87714b55.chunk.js.map": "/autocamper-rent/static/js/697.87714b55.chunk.js.map"
+    "481.978c10b1.chunk.js.map": "/autocamper-rent/static/js/481.978c10b1.chunk.js.map",
+    "413.1a33c2f3.chunk.js.map": "/autocamper-rent/static/js/413.1a33c2f3.chunk.js.map",
+    "639.37c76c8d.chunk.js.map": "/autocamper-rent/static/js/639.37c76c8d.chunk.js.map",
+    "672.060b2bd5.chunk.js.map": "/autocamper-rent/static/js/672.060b2bd5.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.d1395696.css",
-    "static/js/main.0e8c506a.js"
+    "static/js/main.2f553dc5.js"
   ]
 }
