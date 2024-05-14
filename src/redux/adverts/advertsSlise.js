@@ -4,6 +4,10 @@ import { getAllAdverts } from "./operations";
 const handlePending = state => {
   state.isLoading = true;
 };
+const handleRejected = (state, action) => {
+  state.isLoading = false;
+  state.error = action.payload;
+};
 
 const advertSlice = createSlice({
   name: "advert",
@@ -30,12 +34,17 @@ const advertSlice = createSlice({
       .addCase(getAllAdverts.fulfilled, (state, action) => {
         state.isLoading = false;
         state.error = null;
-        state.adverts = action.payload;
+
+        const newAdverts = action.payload.filter(
+          newAdvert =>
+            !state.adverts.some(
+              existingAdvert => existingAdvert._id === newAdvert._id
+            )
+        );
+        state.adverts = [...state.adverts, ...newAdverts];
+
       })
-      .addCase(getAllAdverts.rejected, (state, action) => {
-        state.isLoading = false;
-        state.error = action.payload;
-})
+      .addCase(getAllAdverts.rejected, handleRejected);
 
   }
 

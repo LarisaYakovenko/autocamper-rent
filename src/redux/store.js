@@ -11,16 +11,18 @@ import {
 } from 'redux-persist'
 import storage from 'redux-persist/lib/storage'
 import {advertsReduser} from "./adverts/advertsSlise";
+import { filterReducer } from "./filter/filterSlise";
 
 const persistConfig = {
   key: 'favorites',
   storage,
+  whitelist: ['favorites'],
 }
 
-const persistedReducer = persistReducer(persistConfig, advertsReduser)
-
 export const store = configureStore({
-  reducer: persistedReducer,
+  reducer: persistReducer(persistConfig, advertsReduser),
+  filter: filterReducer,
+
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({
       serializableCheck: {

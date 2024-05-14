@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { selectFavorites } from '../../redux/adverts/selectors';
 import sprite from '../../image/icons.svg';
@@ -16,29 +16,47 @@ import {
   P,
   Price,
 } from './AdvertListItem.styled';
+import Modal from 'components/Modal/Modal';
 
 const AdvertListItem = ({ advert }) => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
   const dispatch = useDispatch();
   const favorites = useSelector(selectFavorites);
-
-  const [isFavorite, setIsFavorite] = useState(false);
-
-  useEffect(() => {
-    if (favorites?.some(car => car.id === advert._id)) {
-      setIsFavorite(true);
-    } else {
-      setIsFavorite(false);
-    }
-  }, [favorites, advert._id]);
+  const favoriteItem = favorites.findIndex(item => item._id === advert._id);
 
   const toggleFavorite = () => {
-    if (isFavorite) {
-      dispatch(removeFavorite(advert.id));
-    } else {
+    if (favoriteItem === -1) {
       dispatch(addFavorite(advert));
+      return;
     }
-    setIsFavorite(!isFavorite);
+    dispatch(removeFavorite(advert._id));
   };
+
+  const openModal = () => {
+    setIsModalOpen(true);
+    document.body.style.overflow = 'hidden';
+  };
+  const closeModal = () => {
+    setIsModalOpen(false);
+  };
+  // const [isFavorite, setIsFavorite] = useState(false);
+
+  // useEffect(() => {
+  //   if (favorites?.some(car => car.id === advert._id)) {
+  //     setIsFavorite(true);
+  //   } else {
+  //     setIsFavorite(false);
+  //   }
+  // }, [favorites, advert._id]);
+
+  // const toggleFavorite = () => {
+  //   if (isFavorite) {
+  //     dispatch(removeFavorite(advert.id));
+  //   } else {
+  //     dispatch(addFavorite(advert));
+  //   }
+  //   setIsFavorite(!isFavorite);
+  // };
   return (
     <Container>
       <Img src={advert.gallery[0]} alt={`${advert.name}`} />
@@ -49,7 +67,7 @@ const AdvertListItem = ({ advert }) => {
             <p>€{advert.price.toFixed(2)}</p>
 
             <Btn onClick={toggleFavorite}>
-              {!isFavorite ? (
+              {favoriteItem === -1 ? (
                 <svg width="24" height="24" fill="none" stroke="currentColor">
                   <use href={`${sprite}#icon-default_like`} />
                 </svg>
@@ -97,28 +115,38 @@ const AdvertListItem = ({ advert }) => {
               </svg>
               {advert.engine}
             </Item>
-            <Item>
-              <svg width="20" height="20" fill="none" stroke="currentColor">
-                <use href={`${sprite}#icon-kitchen`} />
-              </svg>
-              Kitchen
-            </Item>
+            {advert.details.kitchen >= 1 && (
+              <Item>
+                <svg width="20" height="20" fill="none" stroke="currentColor">
+                  <use href={`${sprite}#icon-kitchen`} />
+                </svg>
+                Kitchen
+              </Item>
+            )}
             <Item>
               <svg width="20" height="20" fill="none" stroke="currentColor">
                 <use href={`${sprite}#icon-beds`} />
               </svg>
               {advert.details.beds} beds
             </Item>
-            <Item>
-              <svg width="20" height="20">
-                <use href={`${sprite}#icon-ac`} />
-              </svg>
-              AC
-            </Item>
+            {advert.details.airConditioner >= 1 && (
+              <Item>
+                <svg width="20" height="20">
+                  <use href={`${sprite}#icon-ac`} />
+                </svg>
+                AC
+              </Item>
+            )}
           </List>
         </div>
-        <Button type="button">Show more</Button>
+        <Button onClick={openModal}>Show more</Button>
       </Content>
+
+      {isModalOpen && (
+        <Modal isOpen={isModalOpen} onClose={closeModal}>
+          {/* <Details advert={advert} /> */}
+        </Modal>
+      )}
     </Container>
   );
 };
